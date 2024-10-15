@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="font-[poppins] bg-white h-screen">
+    <header class="bg-white md:fixed top-0 left-0 w-full border-b border-gray-300 z-50">
+        <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
+            <div>
+                <a href="home.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
+            </div>
+    
+            <!-- Nav Links: hidden by default on mobile -->
+            <div class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
+              <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
+                  <!-- Services Dropdown -->
+                  <li class="relative group">
+                      <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
+                      <!-- Dropdown Menu -->
+                      <ul class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]"> <!-- Set width for dropdown -->
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized Transport</a></li>
+                      </ul>
+                  </li>
+          
+                  <!-- Other Links -->
+                  <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
+                  <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
+                  <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
+                  <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
+              </ul>
+            </div>
+          
+           <div class="flex items-center gap-4">
+              <button class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden" onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button> 
+              <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+              </div>
+           </div>
+    
+            <!-- Hamburger Icon for Mobile -->
+            <!-- <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+            </div> -->
+        </nav>
+    </header>
+
+    <section class="mt-24 w-[92%] mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold mb-6">Place Your Order</h2>
+        <form id="orderForm" action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Customer Name -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                <p id="nameError" class="text-red-500 text-sm hidden">Name is required.</p>
+            </div>
+    
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                <p id="emailError" class="text-red-500 text-sm hidden">Please enter a valid email address.</p>
+            </div>
+    
+            <!-- Phone -->
+            <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                <p id="phoneError" class="text-red-500 text-sm hidden">Phone number must be 10 digits.</p>
+            </div>
+    
+            <!-- Shipment Type -->
+            <div>
+                <label for="shipment" class="block text-sm font-medium text-gray-700">Shipment Type</label>
+                <select id="shipment" name="shipment" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    <option value="">Select Shipment Type</option>
+                    <option value="air">Air Freight</option>
+                    <option value="ocean">Ocean Freight</option>
+                    <option value="road">Road Freight</option>
+                    <option value="rail">Rail Freight</option>
+                    <option value="specialized">Specialized Transport</option>
+                </select>
+                <p id="shipmentError" class="text-red-500 text-sm hidden">Please select a shipment type.</p>
+            </div>
+    
+            <!-- Pickup Address -->
+            <div class="col-span-1 md:col-span-2">
+                <label for="pickup" class="block text-sm font-medium text-gray-700">Pickup Address</label>
+                <textarea id="pickup" name="pickup" rows="4" placeholder="Desired pickup Address with pincode" class="mt-1 block w-full p-2 border border-gray-300 rounded-md"></textarea>
+                <p id="pickupError" class="text-red-500 text-sm hidden">Pickup address is required.</p>
+            </div>
+    
+            <!-- Delivery Address -->
+            <div class="col-span-1 md:col-span-2">
+                <label for="delivery" class="block text-sm font-medium text-gray-700">Delivery Address</label>
+                <textarea id="delivery" name="delivery" rows="4" placeholder="Desired delivery Address with pincode" class="mt-1 block w-full p-2 border border-gray-300 rounded-md"></textarea>
+                <p id="deliveryError" class="text-red-500 text-sm hidden">Delivery address is required.</p>
+            </div>
+    
+            <!-- Pickup Pincode -->
+            <div>
+                <label for="pickupPincode" class="block text-sm font-medium text-gray-700">Pickup Pincode</label>
+                <input type="tel" id="pickupPincode" name="pickupPincode" placeholder="560001" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                <p id="pickupPincodeError" class="text-red-500 text-sm hidden">Pincode must be 6 digits.</p>
+            </div>
+    
+            <!-- Delivery Pincode -->
+            <div>
+                <label for="deliveryPincode" class="block text-sm font-medium text-gray-700">Delivery Pincode</label>
+                <input type="tel" id="deliveryPincode" name="deliveryPincode" placeholder="570001" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                <p id="deliveryPincodeError" class="text-red-500 text-sm hidden">Pincode must be 6 digits.</p>
+            </div>
+    
+            <!-- Goods Description -->
+            <div class="col-span-1 md:col-span-2">
+                <label for="goods" class="block text-sm font-medium text-gray-700">Goods Description</label>
+                <textarea id="goods" name="goods" rows="4" placeholder="Description of the goods (cold transport, dry transport) safety measures to take care" class="mt-1 block w-full p-2 border border-gray-300 rounded-md"></textarea>
+                <p id="goodsError" class="text-red-500 text-sm hidden">Goods description is required.</p>
+            </div>
+    
+            <!-- Weight -->
+            <div>
+                <label for="weight" class="block text-sm font-medium text-gray-700">Weight (kg)</label>
+                <input type="number" id="weight" name="weight" placeholder="45 kg" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                <p id="weightError" class="text-red-500 text-sm hidden">Weight is required.</p>
+            </div>
+    
+            <!-- Package Dimensions -->
+            <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label for="length" class="block text-sm font-medium text-gray-700">Length (cm)</label>
+                    <input type="number" id="length" name="length" placeholder="100 cm" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    <p id="lengthError" class="text-red-500 text-sm hidden">Length is required.</p>
+                </div>
+                <div>
+                    <label for="width" class="block text-sm font-medium text-gray-700">Width (cm)</label>
+                    <input type="number" id="width" name="width" placeholder="200 cm" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    <p id="widthError" class="text-red-500 text-sm hidden">Width is required.</p>
+                </div>
+                <div>
+                    <label for="height" class="block text-sm font-medium text-gray-700">Height (cm)</label>
+                    <input type="number" id="height" name="height" placeholder="150 cm" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    <p id="heightError" class="text-red-500 text-sm hidden">Height is required.</p>
+                </div>
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="md:col-span-2">
+                <button type="submit" id="submitBtn" class="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-800">Place Order</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="assets/js/order.js"></script>
+    <script>
+        function onToggleMenu(icon) {
+            // Toggle between menu and close icon
+            icon.name = icon.name === 'menu' ? 'close' : 'menu';
+            
+            // Toggle nav-links visibility
+            navLinks.classList.toggle('hidden');
+            
+            // If visible, set top position to adjust it correctly
+            if (!navLinks.classList.contains('hidden')) {
+                navLinks.classList.add('top-[9%]');
+            } else {
+                navLinks.classList.remove('top-[9%]');
+            }
+        }
+    </script>
+</body>    
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="font-[poppins] bg-white h-screen">
+    <header class="bg-white md:fixed top-0 left-0 w-full border-b border-gray-300 z-50">
+        <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
+            <div>
+                <a href="home.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
+            </div>
+    
+            <!-- Nav Links: hidden by default on mobile -->
+            <div class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
+              <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
+                  <!-- Services Dropdown -->
+                  <li class="relative group">
+                      <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
+                      <!-- Dropdown Menu -->
+                      <ul class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]"> <!-- Set width for dropdown -->
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized Transport</a></li>
+                      </ul>
+                  </li>
+          
+                  <!-- Other Links -->
+                  <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
+                  <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
+                  <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
+                  <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
+              </ul>
+            </div>
+          
+           <div class="flex items-center gap-4">
+              <button class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden" onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button> 
+              <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+              </div>
+           </div>
+    
+            <!-- Hamburger Icon for Mobile -->
+            <!-- <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+            </div> -->
+        </nav>
+    </header>
+
+    <!-- Spacer to prevent content overlap -->
+    <div class="h-20"></div>
+
+    <section class="bg-white p-8">
+        <div class="max-w-[600px] mx-auto">
+            <!-- Heading -->
+            <div class="text-left mb-8">
+                <h1 class="text-4xl font-medium text-gray-800 mb-4">Welcome to 99 Freight Solutions Registration</h1>
+                <p class="text-gray-600 text-justify">
+                    Join our platform to streamline your shipping and logistics experience. Whether you're new to logistics or a seasoned professional, our services are designed to help you manage your freight needs efficiently and securely.
+                </p>
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-half bg-black text-white font-bold px-3 py-3 rounded hover:bg-gray-800 flex items-center justify-center" onclick="window.location.href = 'transportRegistration.html'">
+                        Transportation Registration
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Registration Form -->
+            <form action="#" method="post" class="space-y-4" id="registerForm">
+                <!-- Username -->
+                <div>
+                    <label for="username" class="block text-gray-700 font-semibold mb-2">Create Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter preferred username" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="usernameError">Username is required</p>
+                </div>
+    
+                <!-- Business email -->
+                <div>
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Business Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your business email address" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="emailError">Valid email is required</p>
+                </div>
+    
+                <!-- Full Name -->
+                <div>
+                    <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                    <input type="text" id="full-name" name="first-name" placeholder="Enter your full name" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="fullNameError">Full name is required</p>
+                </div>
+    
+                <!-- City -->
+                <div>
+                    <label for="city" class="block text-gray-700 font-semibold mb-2">City</label>
+                    <input type="text" id="city" placeholder="Enter your city" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-red-500 text-sm hidden" id="cityError">City is required</p>
+                </div>
+    
+                <!-- State -->
+                <div>
+                    <label for="state" class="block text-gray-700 font-semibold mb-2">State</label>
+                    <input type="text" id="state" placeholder="Enter your state" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-red-500 text-sm hidden" id="stateError">State is required</p>
+                </div>
+    
+                <!-- Country -->
+                <div>
+                    <label for="country" class="block text-gray-700 font-semibold mb-2">Country/Region</label>
+                    <input type="text" id="country" name="country" placeholder="Enter your country/region" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="countryError">Country is required</p>
+                </div>
+    
+                <!-- Pincode -->
+                <div>
+                    <label for="pincode" class="block text-gray-700 font-semibold mb-2">Pincode</label>
+                    <input type="tel" id="pincode" placeholder="Enter your pincode" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="pincodeError">Pincode must be 6 digits</p>
+                </div>
+    
+                <!-- Mobile number -->
+                <div>
+                    <label for="mobile-number" class="block text-gray-700 font-semibold mb-2">Mobile Number</label>
+                    <input type="tel" id="mobile-number" placeholder="+91 99999 88888" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="mobileNumberError">Mobile number must be 10 digits</p>
+                </div>
+
+                <!-- Mobile number -->
+                <div>
+                    <label for="mobile-number" class="block text-gray-700 font-semibold mb-2">Company Name</label>
+                    <input type="tel" id="mobile-number" placeholder="Enter your company name" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="mobileNumberError">Mobile number must be 10 digits</p>
+                </div>
+
+                <!-- Mobile number -->
+                <div>
+                    <label for="mobile-number" class="block text-gray-700 font-semibold mb-2">GST Number</label>
+                    <input type="tel" id="mobile-number" placeholder="Enter your GST Number" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="mobileNumberError">Mobile number must be 10 digits</p>
+                </div>
+    
+                <!-- Password -->
+                <div>
+                    <label for="new-password" class="block text-gray-700 font-semibold mb-2">Password</label>
+                    <input type="password" id="new-password" placeholder="Enter your password" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="passwordError">Password is required</p>
+                </div>
+    
+                <!-- Confirm Password -->
+                <div>
+                    <label for="re-enter-password" class="block text-gray-700 font-semibold mb-2">Confirm Password</label>
+                    <input type="password" id="re-enter-password" placeholder="Re-enter your password" class="w-full p-2 border border-gray-300 rounded">
+                    <p class="text-red-500 text-sm hidden" id="confirmPasswordError">Passwords must match</p>
+                </div>
+    
+                <!-- Terms and conditions -->
+                <div class="mt-6">
+                    <input type="checkbox" id="accept-terms" name="accept-terms" class="mr-2">
+                    <label for="accept-terms" class="text-gray-600 text-sm text-justify">I accept the <a href="#" class="text-blue-600 underline">registered user terms</a> and <a href="#" class="text-blue-600 underline">cookie policy</a>.</label>
+                    <p class="text-red-500 text-sm hidden" id="termsError">You must accept the terms</p>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="marketing-consent" name="marketing-consent" class="mr-2">
+                    <label for="marketing-consent" class="text-gray-600 text-sm">
+                        I agree to receive logistics-related news and marketing updates by email, phone, or similar from 99 Freight Solutions and its affiliated companies. I understand that I can opt out of such communications at any time. To see how we process your personal data, read our <a href="#" class="text-blue-600 underline">Privacy Notification</a>.
+                    </label>
+                    <p class="text-red-500 text-sm hidden" id="marketingConsentError">You must accept the marketing consent</p>
+                </div>
+    
+                <!-- Final disclaimer -->
+                <div class="text-gray-600 text-sm mt-4 text-justify">
+                    By registering as a new user, you accept without restriction the <a href="#" class="text-blue-600 underline">user terms</a> (including general user terms, registered user terms, and privacy notification). You will gain access to our online business services, where you can book and track your shipments, submit shipping instructions, access transport documents, and view your account statement. You will also be able to download reports with detailed data on your cargo movements.
+                </div>
+    
+                <!-- Submit button -->
+                <div class="mt-6">
+                    <button type="submit" class="w-full bg-black text-white font-bold py-3 rounded hover:bg-gray-800 flex items-center justify-center">
+                        Register Now
+                    </button>
+                </div>
+            </form>
+        
+            <!-- Additional information -->
+            <div class="flex justify-center items-center mt-6">
+                <span class="text-sm text-gray-600">Already have an account?</span>
+                <a href="login.html" class="text-sm text-blue-600 underline ml-2">Log in</a>
+            </div>
+
+            <div class="flex justify-center items-center mt-2">
+                <span class="text-sm text-gray-600">Want to register as transportation?</span>
+                <a href="transportRegistration.html" class="text-sm text-blue-600 underline ml-2">Register</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="assets/js/register.js"></script>
+    <script>
+        const navLinks = document.querySelector('.nav-links');
+        
+        function onToggleMenu(icon) {
+            // Toggle between menu and close icon
+            icon.name = icon.name === 'menu' ? 'close' : 'menu';
+            
+            // Toggle nav-links visibility
+            navLinks.classList.toggle('hidden');
+            
+            // If visible, set top position to adjust it correctly
+            if (!navLinks.classList.contains('hidden')) {
+                navLinks.classList.add('top-[9%]');
+            } else {
+                navLinks.classList.remove('top-[9%]');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <!-- fonts -->
+   <link rel="stylesheet" href="fonts.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://kit.fontawesome.com/e42624ddbd.js" crossorigin="anonymous"></script>
+  <style>
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .slider-item {
+        flex: 0 0 33.33%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .arrow-icon {
+        cursor: pointer;
+        font-size: 24px;
+        color: #333;
+    }
+    .arrow-icon:hover {
+        color: #000;
+    }
+</style>
+</head>
+<body class="font-[poppins] bg-white h-screen">
+    <header class="bg-white md:fixed top-0 left-0 w-full border-b border-gray-300 z-50">
+        <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
+            <div>
+                <a href="home.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
+            </div>
+    
+            <!-- Nav Links: hidden by default on mobile -->
+            <div class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
+              <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
+                  <!-- Services Dropdown -->
+                  <li class="relative group">
+                      <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
+                      <!-- Dropdown Menu -->
+                      <ul class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]"> <!-- Set width for dropdown -->
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized Transport</a></li>
+                      </ul>
+                  </li>
+          
+                  <!-- Other Links -->
+                  <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
+                  <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
+                  <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
+                  <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
+              </ul>
+            </div>
+          
+           <div class="flex items-center gap-4">
+              <button class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden" onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button> 
+              <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+              </div>
+           </div>
+    
+            <!-- Hamburger Icon for Mobile -->
+            <!-- <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+            </div> -->
+        </nav>
+    </header>
+
+  <div class="h-10 w-full"></div>
+  <section class="relative h-full mt-5 bg-cover bg-center" style="background-image: url('assets/images/homePage-images/oceanTransport1.jpeg');">
+    <!-- Dark overlay to improve text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <!-- Text and button container -->
+      <div class="text-white p-4 max-w-[75%]">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6">Explore Our World-Class Logistics Services</h1>
+        <p class="text-lg mb-6">
+          We provide top-tier logistics solutions tailored to your unique needs, whether it's land, sea, or air. Our expertise ensures your shipments are delivered safely, securely, and on time, every time.
+        </p>
+        <div class="flex justify-center">
+          <button class="bg-white text-black font-bold py-3 px-6 rounded flex items-center gap-2" onclick="window.location.href='register.html'">
+            Get Started
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Air Freight Section -->
+  <section class="relative h-auto mt-5 py-6" id="airFreight">
+    <div class="flex flex-col md:flex-row items-center justify-center w-[85%] mx-auto">
+      <!-- Service Details -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <h2 class="text-xl md:text-3xl font-bold mb-3">Air Freight</h2>
+        <p class="text-gray-700 mb-4">
+          Our air freight service is designed to meet the demands of urgent and time-sensitive shipments. We leverage a robust network of global partners and cutting-edge tracking technologies to ensure your cargo reaches its destination quickly and safely. From small parcels to large shipments, our air freight solutions are tailored to handle a variety of cargo types, providing you with reliable and efficient service. We prioritize safety and timeliness, offering a streamlined process that accommodates tight deadlines while keeping you informed every step of the way.
+        </p>
+      </div>
+      <!-- Service Image -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <img src="assets/images/servicesPage-images/airTransport2.jpeg" alt="Air Freight" class="w-full rounded-lg shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Ocean Freight Section -->
+  <section class="relative h-auto mt-5 bg-gray-100 py-6" id="oceanFreight">
+    <div class="flex flex-col md:flex-row-reverse items-center justify-center w-[85%] mx-auto">
+      <!-- Service Details -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <h2 class="text-xl md:text-3xl font-bold mb-3">Ocean Freight</h2>
+        <p class="text-gray-700 mb-4">
+          Our ocean freight service offers a cost-effective solution for large and heavy shipments that require international transport. With a comprehensive understanding of global shipping routes and port operations, we handle all aspects of ocean freight, from loading to customs clearance. Our team ensures that your cargo is secured and transported efficiently, providing you with detailed tracking information throughout the journey. Whether you need to move goods across continents or across the globe, our ocean freight solutions are designed to deliver your shipments safely and on time, optimizing cost and performance.
+        </p>
+      </div>
+      <!-- Service Image -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <img src="assets/images/servicesPage-images/oceanTransport2.jpeg" alt="Ocean Freight" class="w-full rounded-lg shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Road Freight Section -->
+  <section class="relative h-auto mt-5 py-6" id="roadFreight">
+    <div class="flex flex-col md:flex-row items-center justify-center w-[85%] mx-auto">
+      <!-- Service Details -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <h2 class="text-xl md:text-3xl font-bold mb-3">Road Freight</h2>
+        <p class="text-gray-700 mb-4">
+          Our road freight service is designed to provide efficient and reliable transportation for domestic and regional shipments. Whether you need to move goods across states or local areas, our fleet of well-maintained vehicles and experienced drivers ensure timely delivery and safe handling of your cargo. We offer both full truckload (FTL) and less-than-truckload (LTL) options to suit different needs and budgets. Our road freight solutions include real-time tracking and customer support to keep you informed and ensure a smooth delivery process from start to finish.
+        </p>
+      </div>
+      <!-- Service Image -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <img src="assets/images/servicesPage-images/roadTransport2.jpeg" alt="Road Freight" class="w-full rounded-lg shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Rail Freight Section -->
+  <section class="relative h-auto mt-5 bg-gray-100 py-6" id="railFreight">
+    <div class="flex flex-col md:flex-row-reverse items-center justify-center w-[85%] mx-auto">
+      <!-- Service Details -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <h2 class="text-xl md:text-3xl font-bold mb-3">Rail Freight</h2>
+        <p class="text-gray-700 mb-4">
+          Our rail freight service provides a reliable and eco-friendly option for transporting large quantities of goods over long distances. Utilizing an extensive rail network, we offer efficient solutions that are both cost-effective and environmentally sustainable. Our services include end-to-end management of the transportation process, from scheduling and loading to unloading and delivery. With a focus on safety and reliability, our rail freight solutions ensure your cargo arrives on time and in excellent condition, making it an ideal choice for bulk and heavy shipments.
+        </p>
+      </div>
+      <!-- Service Image -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <img src="assets/images/servicesPage-images/railTransport2.jpeg" alt="Rail Freight" class="w-full rounded-lg shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cold Chain Solutions Section -->
+  <section class="relative h-auto mt-5 py-6" id="coldChainSolutions">
+    <div class="flex flex-col md:flex-row items-center justify-center w-[85%] mx-auto">
+      <!-- Service Details -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <h2 class="text-xl md:text-3xl font-bold mb-3">Cold Chain Solutions</h2>
+        <p class="text-gray-700 mb-4">
+          Our cold chain solutions are meticulously designed to maintain the required temperature conditions for sensitive products such as pharmaceuticals and perishables. We provide end-to-end temperature-controlled logistics, including storage, handling, and transportation. Our advanced monitoring systems ensure that your goods are kept within the optimal temperature range throughout the entire supply chain. From specialized packaging to real-time temperature tracking, our cold chain solutions guarantee the integrity and quality of your products upon arrival.
+        </p>
+      </div>
+      <!-- Service Image -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <img src="assets/images/servicesPage-images/coldTransport2.jpeg" alt="Cold Chain Solutions" class="w-full rounded-lg shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Courier Services Section -->
+  <section class="relative h-auto mt-5 bg-gray-100 py-6" id="courier-service">
+    <div class="flex flex-col md:flex-row-reverse items-center justify-center w-[85%] mx-auto">
+      <!-- Service Details -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <h2 class="text-xl md:text-3xl font-bold mb-3">Courier Services</h2>
+        <p class="text-gray-700 mb-4">
+          Our courier services offer a fast and efficient solution for delivering parcels and documents directly to your doorstep. With a focus on customer satisfaction, we provide reliable delivery options with real-time tracking and flexible scheduling. Whether you need to send important documents or packages across town or across the country, our courier services ensure prompt and secure delivery. We pride ourselves on our excellent customer service, providing support and updates throughout the delivery process to meet your needs.
+        </p>
+      </div>
+      <!-- Service Image -->
+      <div class="w-full md:w-1/2 px-4 py-4">
+        <img src="assets/images/servicesPage-images/specializedTransport2.jpeg" alt="Courier Services" class="w-full rounded-lg shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+<footer class="w-full bg-gradient-to-r from-black to-[#2d0b00] text-white py-8 px-4 relative">
+    <div class="container mx-auto flex flex-wrap justify-around">
+        <!-- Logo and Description -->
+        <div class="w-full md:w-1/4 px-4 mb-10">
+            <img src="assets/images/homePage-images/logo.png" class="w-full max-w-[900px] mb-8">
+            <p class="text-sm leading-4 text-center">
+                99 Freight Solutions provides efficient logistics services, specializing in timely deliveries and tailored freight solutions for businesses. They handle both domestic and international shipments, including full truckloads and LTL, with a focus on customer satisfaction.
+            </p>
+        </div>
+
+        <!-- Office Information -->
+        <div class="w-full md:w-1/4 px-4">
+            <h3 class="text-lg font-semibold relative mb-10 py-4">Office
+                <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
+                    <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
+                </div>
+            </h3>
+            <p class="text-sm">ITPL Road</p>
+            <p class="text-sm">Whitefield, Bangalore</p>
+            <p class="text-sm">Karnataka, PIN 560066, India</p>
+            <p class="text-sm border-b border-gray-300 pt-4 pb-2 mb-4">99freightsolutions@gmail.com</p>
+            <h4 class="text-sm">+91 - 99999 88888</h4>
+        </div>
+
+        <!-- Links -->
+        <div class="w-full md:w-1/4 px-4 mb-10">
+            <h3 class="text-lg font-semibold relative mb-10 py-4">Links
+                <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
+                    <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
+                </div>
+            </h3>
+            <ul class="text-sm space-y-3">
+                <li><a href="services.html" class="text-white">Services</a></li>
+                <li><a href="solutions.html" class="text-white">Solutions</a></li>
+                <li><a href="tracking.html" class="text-white">Tracking</a></li>
+                <li><a href="company.html" class="text-white">Company</a></li>
+                <li><a href="support.html" class="text-white">Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="w-full md:w-1/4 px-4 mb-10">
+            <h3 class="text-lg font-semibold relative mb-10 py-4">Newsletter
+                <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
+                    <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
+                </div>
+            </h3>
+            <form class="flex items-center mb-12 border-b border-gray-300 pb-3">
+                <i class="fa-solid fa-envelope text-gray-400 mr-3"></i>
+                <input type="email" placeholder="Enter your email id" required class="bg-transparent text-gray-400 border-0 outline-none flex-grow">
+                <button type="submit" class="bg-transparent border-0 outline-none cursor-pointer">
+                    <i class="fa-solid fa-arrow-right text-[#B197FC] text-xl"></i>
+                </button>
+            </form>
+            <div class="flex space-x-4">
+                <i class="fa-brands fa-facebook w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+                <i class="fa-brands fa-x-twitter w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+                <i class="fa-brands fa-whatsapp w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+                <i class="fa-brands fa-instagram w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-6 mx-auto border-gray-300 w-11/12">
+
+    <p class="text-center text-sm">99 Freight Solutions - All Rights Reserved</p>
+</footer>
+
+  <style>
+      @keyframes moving {
+          0% { left: -20px; }
+          100% { left: 100px; }
+      }
+
+      .animate-moving {
+          width: 15px;
+          height: 100%;
+          background: #fff;
+          border-radius: 3px;
+          position: absolute;
+          top: 0;
+          left: 10px;
+          animation: moving 2s linear infinite;
+      }
+  </style>
+
+
+  <script>
+        // JavaScript to toggle answer visibility
+        function toggleAnswer(questionNumber) {
+          const answer = document.getElementById(`answer-${questionNumber}`);
+          answer.classList.toggle('hidden');
+        }
+  </script>
+
+  
+  <script>
+    const navLinks = document.querySelector('.nav-links');
+    
+    function onToggleMenu(icon) {
+        // Toggle between menu and close icon
+        icon.name = icon.name === 'menu' ? 'close' : 'menu';
+        
+        // Toggle nav-links visibility
+        navLinks.classList.toggle('hidden');
+        
+        // If visible, set top position to adjust it correctly
+        if (!navLinks.classList.contains('hidden')) {
+            navLinks.classList.add('top-[9%]');
+        } else {
+            navLinks.classList.remove('top-[9%]');
+        }
+    }
+  </script>
+</body>
+</html>

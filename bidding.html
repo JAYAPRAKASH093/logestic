@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="font-[poppins] bg-white h-screen">
+    <header class="bg-white md:fixed top-0 left-0 w-full border-b border-gray-300 z-50">
+        <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
+            <div>
+                <a href="home.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
+            </div>
+    
+            <!-- Nav Links: hidden by default on mobile -->
+            <div class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
+              <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
+                  <!-- Services Dropdown -->
+                  <li class="relative group">
+                      <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
+                      <!-- Dropdown Menu -->
+                      <ul class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]"> <!-- Set width for dropdown -->
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight Services</a></li>
+                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized Transport</a></li>
+                      </ul>
+                  </li>
+          
+                  <!-- Other Links -->
+                  <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
+                  <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
+                  <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
+                  <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
+              </ul>
+            </div>
+          
+           <div class="flex items-center gap-4">
+              <button class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden" onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button> 
+              <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+              </div>
+           </div>
+    
+            <!-- Hamburger Icon for Mobile -->
+            <!-- <div class="block md:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+            </div> -->
+        </nav>
+      </header>
+
+    <div class="mt-20"></div>
+
+    <div class="container mx-auto flex">
+        <!-- Orders Sidebar -->
+        <aside class="w-1/4 bg-white p-6 shadow-lg h-screen">
+            <h2 class="text-2xl font-semibold mb-4">Available Orders</h2>
+            <ul id="orderList" class="space-y-4">
+                <!-- Orders will be rendered here -->
+            </ul>
+        </aside>
+
+        <!-- Bidding Section -->
+        <main class="w-3/4 p-8">
+            <h2 class="text-3xl font-semibold mb-6">Place Your Bid</h2>
+
+            <!-- Order Details -->
+            <section id="orderDetails" class="mb-6 p-4 bg-white rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-4">Order Details</h3>
+                <p id="orderInfo"></p>
+            </section>
+
+            <!-- Bid Section -->
+            <form id="bidForm" class="bg-white p-6 rounded-lg shadow-md">
+                <!-- Transporter Info -->
+                <div class="mb-4">
+                    <label for="companyName" class="block text-sm font-medium text-gray-700">Company Name</label>
+                    <input type="text" id="companyName" disabled class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div class="mb-4">
+                    <label for="businessEmail" class="block text-sm font-medium text-gray-700">Business Email</label>
+                    <input type="email" id="businessEmail" disabled class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                </div>
+
+                <!-- Bid Amount -->
+                <div class="mb-4">
+                    <label for="bidAmount" class="block text-sm font-medium text-gray-700">Bid Amount (₹)</label>
+                    <input type="number" id="bidAmount" placeholder="Enter your bid in ₹" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700">Submit Bid</button>
+            </form>
+
+            <!-- Display Bids -->
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold mb-4">Current Bids</h3>
+                <div id="bidsContainer"></div>
+            </div>
+
+            <!-- Timer -->
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold mb-2">Bidding Timer</h3>
+                <p id="timerDisplay" class="text-lg"></p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simulate login info (Replace this with actual login data)
+        const transporter = JSON.parse(localStorage.getItem('transporter')) || {
+            companyName: "XYZ Logistics",
+            businessEmail: "contact@xyzlogistics.com"
+        };
+
+        // Render transporter details
+        document.getElementById('companyName').value = transporter.companyName;
+        document.getElementById('businessEmail').value = transporter.businessEmail;
+
+        // Simulating fetching multiple orders
+        const orders = [
+            { id: 1, name: "Order 1", details: "Shipment from A to B - 100kg" },
+            { id: 2, name: "Order 2", details: "Shipment from X to Y - 200kg" },
+        ];
+
+        // Render orders in sidebar
+        const orderList = document.getElementById('orderList');
+        orders.forEach(order => {
+            const li = document.createElement('li');
+            li.classList.add('p-4', 'bg-gray-100', 'rounded-md');
+            li.textContent = order.name;
+            li.addEventListener('click', () => showOrderDetails(order));
+            orderList.appendChild(li);
+        });
+
+        // Function to show order details
+        function showOrderDetails(order) {
+            const orderInfo = document.getElementById('orderInfo');
+            orderInfo.textContent = order.details;
+            localStorage.setItem('currentOrder', JSON.stringify(order));
+        }
+
+        // Load order details if page is refreshed
+        const currentOrder = JSON.parse(localStorage.getItem('currentOrder'));
+        if (currentOrder) {
+            showOrderDetails(currentOrder);
+        }
+
+        // Timer Countdown
+        let timer = parseInt(localStorage.getItem('timer')) || 45 * 60; // 45 minutes in seconds
+        const timerDisplay = document.getElementById('timerDisplay');
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(timer / 60);
+            const seconds = timer % 60;
+            timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timer === 0) clearInterval(countdown);
+            localStorage.setItem('timer', timer);
+            timer--;
+        }, 1000);
+
+        // Bidding logic
+        const bidForm = document.getElementById('bidForm');
+        const bidsContainer = document.getElementById('bidsContainer');
+        let bids = JSON.parse(localStorage.getItem('bids')) || [];
+
+        bidForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const bidAmount = parseFloat(document.getElementById('bidAmount').value);
+
+            if (bidAmount) {
+                // Check if transporter has already placed a bid
+                const existingBid = bids.find(bid => bid.email === transporter.businessEmail);
+                if (existingBid) {
+                    existingBid.amount = bidAmount; // Override previous bid
+                } else {
+                    bids.push({ company: transporter.companyName, email: transporter.businessEmail, amount: bidAmount });
+                }
+
+                // Sort bids by amount in ascending order
+                bids.sort((a, b) => a.amount - b.amount);
+
+                // Render bids
+                renderBids(bids);
+
+                // Save bids in localStorage
+                localStorage.setItem('bids', JSON.stringify(bids));
+            }
+        });
+
+        // Function to render bids
+        function renderBids(bids) {
+            bidsContainer.innerHTML = '';
+            bids.forEach((bid, index) => {
+                const bidElement = document.createElement('div');
+                bidElement.classList.add('p-4', 'bg-gray-100', 'rounded-md', 'mb-2');
+                bidElement.textContent = `#${index + 1} - ${bid.company} bid ₹${bid.amount}`;
+                bidsContainer.appendChild(bidElement);
+            });
+        }
+
+        // Load bids if page is refreshed
+        if (bids.length > 0) {
+            renderBids(bids);
+        }
+    </script>
+
+    <script>
+        const navLinks = document.querySelector('.nav-links');
+        function onToggleMenu(icon) {
+            icon.name = icon.name === 'menu' ? 'close' : 'menu';
+            navLinks.classList.toggle('hidden');
+            if (!navLinks.classList.contains('hidden')) {
+                navLinks.classList.add('top-[9%]');
+            } else {
+                navLinks.classList.remove('top-[9%]');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -19,40 +19,52 @@
     <header class="bg-white md:fixed top-0 left-0 w-full border-b border-gray-300 z-50">
         <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
             <div>
-                <a href="home.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
+                <a href="index.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
             </div>
-    
+
             <!-- Nav Links: hidden by default on mobile -->
-            <div class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
-              <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
-                  <!-- Services Dropdown -->
-                  <li class="relative group">
-                      <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
-                      <!-- Dropdown Menu -->
-                      <ul class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]"> <!-- Set width for dropdown -->
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized Transport</a></li>
-                      </ul>
-                  </li>
-          
-                  <!-- Other Links -->
-                  <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
-                  <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
-                  <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
-                  <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
-              </ul>
+            <div
+                class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
+                <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
+                    <!-- Services Dropdown -->
+                    <li class="relative group">
+                        <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1"
+                            href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
+                        <!-- Dropdown Menu -->
+                        <ul
+                            class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]">
+                            <!-- Set width for dropdown -->
+                            <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air
+                                    Freight Services</a></li>
+                            <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a
+                                    href="services.html">Ocean Freight Services</a></li>
+                            <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a
+                                    href="services.html">Road Freight Services</a></li>
+                            <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a
+                                    href="services.html">Rail Freight Services</a></li>
+                            <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a
+                                    href="services.html">Specialized Transport</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Other Links -->
+                    <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
+                    <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
+                    <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
+                    <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
+                </ul>
             </div>
-          
-           <div class="flex items-center gap-4">
-              <button class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden" onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button> 
-              <div class="block md:hidden">
-                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
-              </div>
-           </div>
-    
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden"
+                    onclick="window.location.href='register.html'">Sign in<ion-icon
+                        name="arrow-forward"></ion-icon></button>
+                <div class="block md:hidden">
+                    <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+                </div>
+            </div>
+
             <!-- Hamburger Icon for Mobile -->
             <!-- <div class="block md:hidden">
                 <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
@@ -69,7 +81,8 @@
             <div class="text-left mb-8">
                 <h1 class="text-4xl font-medium text-gray-800 mb-4">Transporter Registration</h1>
                 <p class="text-gray-600 text-justify">
-                    Join 99 Freight Solutions as a trusted transporter partner. Provide your company details to start managing your logistics
+                    Join 99 Freight Solutions as a trusted transporter partner. Provide your company details to start
+                    managing your logistics
                     operations seamlessly with our platform.
                 </p>
             </div>
@@ -112,14 +125,16 @@
                 <div>
                     <label for="license-number" class="block text-gray-700 font-semibold mb-2">GST Number</label>
                     <input type="text" id="license-number" name="license-number"
-                        placeholder="Enter your transporter license number" class="w-full p-2 border border-gray-300 rounded">
+                        placeholder="Enter your transporter license number"
+                        class="w-full p-2 border border-gray-300 rounded">
                     <p class="text-red-500 text-sm hidden" id="licenseNumberError">License number is required</p>
                 </div>
 
                 <!-- Fleet Size -->
                 <div>
                     <label for="fleet-size" class="block text-gray-700 font-semibold mb-2">Fleet Size</label>
-                    <input type="number" id="fleet-size" name="fleet-size" placeholder="Enter number of vehicles in your fleet"
+                    <input type="number" id="fleet-size" name="fleet-size"
+                        placeholder="Enter number of vehicles in your fleet"
                         class="w-full p-2 border border-gray-300 rounded">
                     <p class="text-red-500 text-sm hidden" id="fleetSizeError">Fleet size is required</p>
                 </div>
@@ -136,14 +151,17 @@
                         <option value="Tanker">Tanker</option>
                         <option value="Other">Other</option>
                     </select>
-                    <p class="text-red-500 text-sm hidden" id="vehicleTypesError">Please select at least one vehicle type</p>
+                    <p class="text-red-500 text-sm hidden" id="vehicleTypesError">Please select at least one vehicle
+                        type</p>
                 </div>
 
                 <!-- Insurance Details -->
                 <div>
-                    <label for="insurance-details" class="block text-gray-700 font-semibold mb-2">Insurance Details</label>
+                    <label for="insurance-details" class="block text-gray-700 font-semibold mb-2">Insurance
+                        Details</label>
                     <input type="text" id="insurance-details" name="insurance-details"
-                        placeholder="Enter your insurance provider and policy number" class="w-full p-2 border border-gray-300 rounded">
+                        placeholder="Enter your insurance provider and policy number"
+                        class="w-full p-2 border border-gray-300 rounded">
                     <p class="text-red-500 text-sm hidden" id="insuranceDetailsError">Insurance details are required</p>
                 </div>
 
@@ -158,16 +176,17 @@
                 <!-- Bank Details -->
                 <div>
                     <label for="bank-details" class="block text-gray-700 font-semibold mb-2">Bank Details</label>
-                    <input type="text" id="bank-details" name="bank-details" placeholder="Enter your bank account details"
-                        class="w-full p-2 border border-gray-300 rounded">
+                    <input type="text" id="bank-details" name="bank-details"
+                        placeholder="Enter your bank account details" class="w-full p-2 border border-gray-300 rounded">
                     <p class="text-red-500 text-sm hidden" id="bankDetailsError">Bank details are required</p>
                 </div>
 
                 <!-- Contact Person Name -->
                 <div>
-                    <label for="contact-person" class="block text-gray-700 font-semibold mb-2">Contact Person Name</label>
-                    <input type="text" id="contact-person" name="contact-person" placeholder="Enter contact person's name"
-                        class="w-full p-2 border border-gray-300 rounded">
+                    <label for="contact-person" class="block text-gray-700 font-semibold mb-2">Contact Person
+                        Name</label>
+                    <input type="text" id="contact-person" name="contact-person"
+                        placeholder="Enter contact person's name" class="w-full p-2 border border-gray-300 rounded">
                     <p class="text-red-500 text-sm hidden" id="contactPersonError">Contact person name is required</p>
                 </div>
 
@@ -182,7 +201,8 @@
 
                 <!-- Business Address -->
                 <div>
-                    <label for="business-address" class="block text-gray-700 font-semibold mb-2">Business Address</label>
+                    <label for="business-address" class="block text-gray-700 font-semibold mb-2">Business
+                        Address</label>
                     <textarea id="business-address" name="business-address" placeholder="Enter your business address"
                         class="w-full p-2 border border-gray-300 rounded"></textarea>
                     <p class="text-red-500 text-sm hidden" id="businessAddressError">Business address is required</p>
@@ -206,7 +226,8 @@
 
                 <!-- Confirm Password -->
                 <div>
-                    <label for="re-enter-password" class="block text-gray-700 font-semibold mb-2">Confirm Password</label>
+                    <label for="re-enter-password" class="block text-gray-700 font-semibold mb-2">Confirm
+                        Password</label>
                     <input type="password" id="re-enter-password" name="confirm-password"
                         placeholder="Re-enter your password" class="w-full p-2 border border-gray-300 rounded">
                     <p class="text-red-500 text-sm hidden" id="confirmPasswordError">Passwords must match</p>
@@ -225,20 +246,27 @@
                 <div>
                     <input type="checkbox" id="marketing-consent" name="marketing-consent" class="mr-2">
                     <label for="marketing-consent" class="text-gray-600 text-sm">
-                        I agree to receive logistics-related news and marketing updates by email, phone, or similar from 99
-                        Freight Solutions and its affiliated companies. I understand that I can opt out of such communications
+                        I agree to receive logistics-related news and marketing updates by email, phone, or similar from
+                        99
+                        Freight Solutions and its affiliated companies. I understand that I can opt out of such
+                        communications
                         at any time. To see how we process your personal data, read our <a href="#"
                             class="text-blue-600 underline">Privacy Notification</a>.
                     </label>
-                    <p class="text-red-500 text-sm hidden" id="marketingConsentError">You must accept the marketing consent</p>
+                    <p class="text-red-500 text-sm hidden" id="marketingConsentError">You must accept the marketing
+                        consent</p>
                 </div>
 
                 <!-- Final Disclaimer -->
                 <div class="text-gray-600 text-sm mt-4 text-justify">
-                    By registering as a transporter, you accept the <a href="#" class="text-blue-600 underline">transporter
-                        terms</a> (including general user terms, registered user terms, and privacy notification). You will gain
-                    access to our online business services, where you can manage your transport operations, track shipments, submit
-                    transport instructions, access transport documents, and view your account statements. You will also be able to
+                    By registering as a transporter, you accept the <a href="#"
+                        class="text-blue-600 underline">transporter
+                        terms</a> (including general user terms, registered user terms, and privacy notification). You
+                    will gain
+                    access to our online business services, where you can manage your transport operations, track
+                    shipments, submit
+                    transport instructions, access transport documents, and view your account statements. You will also
+                    be able to
                     download reports with detailed data on your cargo movements.
                 </div>
 
@@ -284,4 +312,5 @@
         }
     </script>
 </body>
+
 </html>

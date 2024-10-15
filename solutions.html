@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,87 +8,107 @@
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="https://kit.fontawesome.com/e42624ddbd.js" crossorigin="anonymous"></script>
   <style>
     .slider {
-        display: flex;
-        transition: transform 0.5s ease;
+      display: flex;
+      transition: transform 0.5s ease;
     }
+
     .slider-item {
-        flex: 0 0 33.33%;
-        padding: 10px;
-        box-sizing: border-box;
+      flex: 0 0 33.33%;
+      padding: 10px;
+      box-sizing: border-box;
     }
+
     .arrow-icon {
-        cursor: pointer;
-        font-size: 24px;
-        color: #333;
+      cursor: pointer;
+      font-size: 24px;
+      color: #333;
     }
+
     .arrow-icon:hover {
-        color: #000;
+      color: #000;
     }
-</style>
+  </style>
 </head>
+
 <body class="font-[poppins] bg-white h-screen">
   <header class="bg-white md:fixed top-0 left-0 w-full border-b border-gray-300 z-50">
-        <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
-            <div>
-                <a href="home.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
-            </div>
-    
-            <!-- Nav Links: hidden by default on mobile -->
-            <div class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
-              <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
-                  <!-- Services Dropdown -->
-                  <li class="relative group">
-                      <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon name="chevron-down-outline"></ion-icon></a>
-                      <!-- Dropdown Menu -->
-                      <ul class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]"> <!-- Set width for dropdown -->
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight Services</a></li>
-                          <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized Transport</a></li>
-                      </ul>
-                  </li>
-          
-                  <!-- Other Links -->
-                  <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
-                  <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
-                  <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
-                  <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
-              </ul>
-            </div>
-          
-           <div class="flex items-center gap-4">
-              <button class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden" onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button> 
-              <div class="block md:hidden">
-                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
-              </div>
-           </div>
-    
-            <!-- Hamburger Icon for Mobile -->
-            <!-- <div class="block md:hidden">
+    <nav class="flex py-4 items-center justify-between w-[92%] mx-auto">
+      <div>
+        <a href="index.html"><img class="w-40" src="assets/images/homePage-images/logo.png" alt="Logo"></a>
+      </div>
+
+      <!-- Nav Links: hidden by default on mobile -->
+      <div
+        class="nav-links md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[100%] md:w-auto w-full items-center px-5 z-30 md:flex hidden">
+        <ul class="flex md:flex-row flex-col md:items-center gap-[4vw] gap-8">
+          <!-- Services Dropdown -->
+          <li class="relative group">
+            <a class="hover:text-gray-500 cursor-pointer flex items-center gap-1" href="services.html">Services<ion-icon
+                name="chevron-down-outline"></ion-icon></a>
+            <!-- Dropdown Menu -->
+            <ul
+              class="absolute left-0 top-full hidden group-hover:flex md:group-hover:flex flex-col bg-white shadow-lg py-2 w-[210px]">
+              <!-- Set width for dropdown -->
+              <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Air Freight
+                  Services</a></li>
+              <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Ocean Freight
+                  Services</a></li>
+              <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Road Freight
+                  Services</a></li>
+              <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Rail Freight
+                  Services</a></li>
+              <li class="px-4 py-2 hover:bg-gray-100 w-full whitespace-nowrap"><a href="services.html">Specialized
+                  Transport</a></li>
+            </ul>
+          </li>
+
+          <!-- Other Links -->
+          <li><a class="hover:text-gray-500" href="solutions.html">Solutions</a></li>
+          <li><a class="hover:text-gray-500" href="tracking.html">Tracking</a></li>
+          <li><a class="hover:text-gray-500" href="company.html">Company</a></li>
+          <li><a class="hover:text-gray-500" href="support.html">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button
+          class="nav links bg-black text-white px-2 py-1.5 hover:bg-gray-800 hover:text-white flex items-center gap-2 md:flex hidden"
+          onclick="window.location.href='register.html'">Sign in<ion-icon name="arrow-forward"></ion-icon></button>
+        <div class="block md:hidden">
+          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Hamburger Icon for Mobile -->
+      <!-- <div class="block md:hidden">
                 <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
             </div> -->
-        </nav>
+    </nav>
   </header>
 
   <div class="h-10 w-full"></div>
-  <section class="relative h-full mt-5 bg-cover bg-center" style="background-image: url('assets/images/solutionPage-images/transportManagement.jpeg');">
+  <section class="relative h-full mt-5 bg-cover bg-center"
+    style="background-image: url('assets/images/solutionPage-images/transportManagement.jpeg');">
     <!-- Dark overlay to improve text readability -->
     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <!-- Text and button container -->
       <div class="text-white p-4 max-w-[80%]">
         <h1 class="text-3xl md:text-5xl font-bold mb-6">Explore Our Comprehensive Logistics Solutions</h1>
-          <p class="text-lg mb-6">
-             Our logistics solutions are designed to meet the diverse needs of modern businesses, offering a full spectrum of services to streamline your supply chain. 
-          </p>
+        <p class="text-lg mb-6">
+          Our logistics solutions are designed to meet the diverse needs of modern businesses, offering a full spectrum
+          of services to streamline your supply chain.
+        </p>
         <div class="flex justify-center">
-          <button class="bg-white text-black font-bold py-3 px-6 rounded flex items-center gap-2" onclick="window.location.href='register.html'">
+          <button class="bg-white text-black font-bold py-3 px-6 rounded flex items-center gap-2"
+            onclick="window.location.href='register.html'">
             Get Started
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
@@ -102,151 +123,183 @@
       <!-- Solution Details -->
       <div class="w-full md:w-1/2 px-4 py-4">
         <h2 class="text-xl md:text-3xl font-bold mb-3">Transportation Management</h2>
-        <p class="text-gray-700 mb-4">Transform your logistics operations with our advanced transportation management solutions. We specialize in optimizing routes, managing carriers, and streamlining transportation processes to enhance efficiency. Our approach ensures timely, cost-effective deliveries, reduces operational delays, and improves overall customer satisfaction. Leverage our expertise to navigate complexities and achieve seamless transportation management.</p>
+        <p class="text-gray-700 mb-4">Transform your logistics operations with our advanced transportation management
+          solutions. We specialize in optimizing routes, managing carriers, and streamlining transportation processes to
+          enhance efficiency. Our approach ensures timely, cost-effective deliveries, reduces operational delays, and
+          improves overall customer satisfaction. Leverage our expertise to navigate complexities and achieve seamless
+          transportation management.</p>
       </div>
       <!-- Solution Image -->
       <div class="w-full md:w-1/2 px-4 py-4">
-        <img src="assets/images/solutionPage-images/transportManagement.jpeg" alt="Transportation Management" class="w-full h-70 object-cover rounded-lg shadow-lg">
+        <img src="assets/images/solutionPage-images/transportManagement.jpeg" alt="Transportation Management"
+          class="w-full h-70 object-cover rounded-lg shadow-lg">
       </div>
     </div>
   </section>
-  
+
   <!-- Solution 2 -->
   <section class="relative h-auto mt-5 bg-gray-100 py-6">
     <div class="flex flex-col md:flex-row-reverse items-center justify-center w-[85%] mx-auto">
       <!-- Solution Details -->
       <div class="w-full md:w-1/2 px-4 py-4">
         <h2 class="text-xl md:text-3xl font-bold mb-3">Warehouse Management</h2>
-        <p class="text-gray-700 mb-4">Elevate your warehouse operations with our state-of-the-art management solutions. We offer advanced inventory control, streamlined processes, and enhanced stock accuracy to minimize handling times and maximize efficiency. Our solutions provide real-time visibility, automated workflows, and strategic insights to optimize warehouse performance and support your supply chain goals effectively.</p>
+        <p class="text-gray-700 mb-4">Elevate your warehouse operations with our state-of-the-art management solutions.
+          We offer advanced inventory control, streamlined processes, and enhanced stock accuracy to minimize handling
+          times and maximize efficiency. Our solutions provide real-time visibility, automated workflows, and strategic
+          insights to optimize warehouse performance and support your supply chain goals effectively.</p>
       </div>
       <!-- Solution Image -->
       <div class="w-full md:w-1/2 px-4 py-4">
-        <img src="assets/images/solutionPage-images/warehouse.jpg" alt="Warehouse Management" class="w-full h-70 object-cover rounded-lg shadow-lg">
+        <img src="assets/images/solutionPage-images/warehouse.jpg" alt="Warehouse Management"
+          class="w-full h-70 object-cover rounded-lg shadow-lg">
       </div>
     </div>
   </section>
-  
+
   <!-- Solution 3 -->
   <section class="relative h-auto mt-5 py-6">
     <div class="flex flex-col md:flex-row items-center justify-center w-[85%] mx-auto">
       <!-- Solution Details -->
       <div class="w-full md:w-1/2 px-4 py-4">
         <h2 class="text-xl md:text-3xl font-bold mb-3">Freight Management</h2>
-        <p class="text-gray-700 mb-4">Streamline your freight operations with our comprehensive management services. Our expert team handles every aspect of freight, from booking to delivery, ensuring a seamless movement of goods across various channels. With our solutions, you can simplify processes, reduce costs, and achieve higher efficiency, while gaining full visibility and control over your freight activities.</p>
+        <p class="text-gray-700 mb-4">Streamline your freight operations with our comprehensive management services. Our
+          expert team handles every aspect of freight, from booking to delivery, ensuring a seamless movement of goods
+          across various channels. With our solutions, you can simplify processes, reduce costs, and achieve higher
+          efficiency, while gaining full visibility and control over your freight activities.</p>
       </div>
       <!-- Solution Image -->
       <div class="w-full md:w-1/2 px-4 py-4">
-        <img src="assets/images/solutionPage-images/freightManagement1.jpg" alt="Freight Management" class="w-full h-70 object-cover rounded-lg shadow-lg">
+        <img src="assets/images/solutionPage-images/freightManagement1.jpg" alt="Freight Management"
+          class="w-full h-70 object-cover rounded-lg shadow-lg">
       </div>
     </div>
   </section>
-  
+
   <!-- Solution 4 -->
   <section class="relative h-auto mt-5 bg-gray-100 py-6">
     <div class="flex flex-col md:flex-row-reverse items-center justify-center w-[85%] mx-auto">
       <!-- Solution Details -->
       <div class="w-full md:w-1/2 px-4 py-4">
         <h2 class="text-xl md:text-3xl font-bold mb-3">Supply Chain Optimization</h2>
-        <p class="text-gray-700 mb-4">Optimize your entire supply chain with our data-driven strategies. We enhance coordination between suppliers, manufacturers, and distributors, leveraging analytics to reduce costs and improve delivery performance. Our solutions provide actionable insights, streamline operations, and ensure that your supply chain is agile, responsive, and aligned with your business objectives.</p>
+        <p class="text-gray-700 mb-4">Optimize your entire supply chain with our data-driven strategies. We enhance
+          coordination between suppliers, manufacturers, and distributors, leveraging analytics to reduce costs and
+          improve delivery performance. Our solutions provide actionable insights, streamline operations, and ensure
+          that your supply chain is agile, responsive, and aligned with your business objectives.</p>
       </div>
       <!-- Solution Image -->
       <div class="w-full md:w-1/2 px-4 py-4">
-        <img src="assets/images/solutionPage-images/supplyChain.jpeg" alt="Supply Chain Optimization" class="w-full h-70 object-cover rounded-lg shadow-lg">
+        <img src="assets/images/solutionPage-images/supplyChain.jpeg" alt="Supply Chain Optimization"
+          class="w-full h-70 object-cover rounded-lg shadow-lg">
       </div>
     </div>
   </section>
-  
+
   <!-- Solution 5 -->
   <section class="relative h-auto mt-5 py-6">
     <div class="flex flex-col md:flex-row items-center justify-center w-[85%] mx-auto">
       <!-- Solution Details -->
       <div class="w-full md:w-1/2 px-4 py-4">
         <h2 class="text-xl md:text-3xl font-bold mb-3">Tracking and Visibility</h2>
-        <p class="text-gray-700 mb-4">Achieve complete transparency in your logistics with our advanced tracking and visibility solutions. Monitor the location and status of your shipments in real time, allowing you to respond swiftly to any issues that arise. Our solutions offer detailed insights and updates, ensuring that you stay informed and in control throughout the entire shipping process.</p>
+        <p class="text-gray-700 mb-4">Achieve complete transparency in your logistics with our advanced tracking and
+          visibility solutions. Monitor the location and status of your shipments in real time, allowing you to respond
+          swiftly to any issues that arise. Our solutions offer detailed insights and updates, ensuring that you stay
+          informed and in control throughout the entire shipping process.</p>
       </div>
       <!-- Solution Image -->
       <div class="w-full md:w-1/2 px-4 py-4">
-        <img src="assets/images/solutionPage-images/tracking.jpeg" alt="Tracking and Visibility" class="w-full h-70 object-cover rounded-lg shadow-lg">
+        <img src="assets/images/solutionPage-images/tracking.jpeg" alt="Tracking and Visibility"
+          class="w-full h-70 object-cover rounded-lg shadow-lg">
       </div>
     </div>
   </section>
-  
+
   <!-- Solution 6 -->
   <section class="relative h-auto mt-5 bg-gray-100 py-6">
     <div class="flex flex-col md:flex-row-reverse items-center justify-center w-[85%] mx-auto">
       <!-- Solution Details -->
       <div class="w-full md:w-1/2 px-4 py-4">
         <h2 class="text-xl md:text-3xl font-bold mb-3">Customs and Compliance</h2>
-        <p class="text-gray-700 mb-4">Navigate the complexities of international trade with our expert customs and compliance services. We ensure that your shipments adhere to all relevant regulations and customs requirements, preventing delays and avoiding penalties. Our solutions streamline the documentation process, provide guidance on regulatory issues, and facilitate smooth customs clearance.</p>
+        <p class="text-gray-700 mb-4">Navigate the complexities of international trade with our expert customs and
+          compliance services. We ensure that your shipments adhere to all relevant regulations and customs
+          requirements, preventing delays and avoiding penalties. Our solutions streamline the documentation process,
+          provide guidance on regulatory issues, and facilitate smooth customs clearance.</p>
       </div>
       <!-- Solution Image -->
       <div class="w-full md:w-1/2 px-4 py-4">
-        <img src="assets/images/solutionPage-images/custom.jpeg" alt="Customs and Compliance" class="w-full h-70 object-cover rounded-lg shadow-lg">
+        <img src="assets/images/solutionPage-images/custom.jpeg" alt="Customs and Compliance"
+          class="w-full h-70 object-cover rounded-lg shadow-lg">
       </div>
     </div>
   </section>
 
   <footer class="w-full bg-gradient-to-r from-black to-[#2d0b00] text-white py-8 px-4 relative">
     <div class="container mx-auto flex flex-wrap justify-around">
-        <!-- Logo and Description -->
-        <div class="w-full md:w-1/4 px-4 mb-10">
-            <img src="assets/images/homePage-images/logo.png" class="w-full max-w-[900px] mb-8">
-            <p class="text-sm leading-4 text-center">
-                99 Freight Solutions provides efficient logistics services, specializing in timely deliveries and tailored freight solutions for businesses. They handle both domestic and international shipments, including full truckloads and LTL, with a focus on customer satisfaction.
-            </p>
-        </div>
+      <!-- Logo and Description -->
+      <div class="w-full md:w-1/4 px-4 mb-10">
+        <img src="assets/images/homePage-images/logo.png" class="w-full max-w-[900px] mb-8">
+        <p class="text-sm leading-4 text-center">
+          99 Freight Solutions provides efficient logistics services, specializing in timely deliveries and tailored
+          freight solutions for businesses. They handle both domestic and international shipments, including full
+          truckloads and LTL, with a focus on customer satisfaction.
+        </p>
+      </div>
 
-        <!-- Office Information -->
-        <div class="w-full md:w-1/4 px-4">
-            <h3 class="text-lg font-semibold relative mb-10 py-4">Office
-                <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
-                    <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
-                </div>
-            </h3>
-            <p class="text-sm">ITPL Road</p>
-            <p class="text-sm">Whitefield, Bangalore</p>
-            <p class="text-sm">Karnataka, PIN 560066, India</p>
-            <p class="text-sm border-b border-gray-300 pt-4 pb-2 mb-4">99freightsolutions@gmail.com</p>
-            <h4 class="text-sm">+91 - 99999 88888</h4>
-        </div>
+      <!-- Office Information -->
+      <div class="w-full md:w-1/4 px-4">
+        <h3 class="text-lg font-semibold relative mb-10 py-4">Office
+          <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
+            <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
+          </div>
+        </h3>
+        <p class="text-sm">ITPL Road</p>
+        <p class="text-sm">Whitefield, Bangalore</p>
+        <p class="text-sm">Karnataka, PIN 560066, India</p>
+        <p class="text-sm border-b border-gray-300 pt-4 pb-2 mb-4">99freightsolutions@gmail.com</p>
+        <h4 class="text-sm">+91 - 99999 88888</h4>
+      </div>
 
-        <!-- Links -->
-        <div class="w-full md:w-1/4 px-4 mb-10">
-            <h3 class="text-lg font-semibold relative mb-10 py-4">Links
-                <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
-                    <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
-                </div>
-            </h3>
-            <ul class="text-sm space-y-3">
-                <li><a href="services.html" class="text-white">Services</a></li>
-                <li><a href="solutions.html" class="text-white">Solutions</a></li>
-                <li><a href="tracking.html" class="text-white">Tracking</a></li>
-                <li><a href="company.html" class="text-white">Company</a></li>
-                <li><a href="support.html" class="text-white">Support</a></li>
-            </ul>
-        </div>
+      <!-- Links -->
+      <div class="w-full md:w-1/4 px-4 mb-10">
+        <h3 class="text-lg font-semibold relative mb-10 py-4">Links
+          <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
+            <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
+          </div>
+        </h3>
+        <ul class="text-sm space-y-3">
+          <li><a href="services.html" class="text-white">Services</a></li>
+          <li><a href="solutions.html" class="text-white">Solutions</a></li>
+          <li><a href="tracking.html" class="text-white">Tracking</a></li>
+          <li><a href="company.html" class="text-white">Company</a></li>
+          <li><a href="support.html" class="text-white">Support</a></li>
+        </ul>
+      </div>
 
-        <!-- Newsletter -->
-        <div class="w-full md:w-1/4 px-4 mb-10">
-            <h3 class="text-lg font-semibold relative mb-10 py-4">Newsletter
-                <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
-                    <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
-                </div>
-            </h3>
-            <form class="flex items-center mb-12 border-b border-gray-300 pb-3">
-                <i class="fa-solid fa-envelope text-gray-400 mr-3"></i>
-                <input type="email" placeholder="Enter your email id" required class="bg-transparent text-gray-400 border-0 outline-none flex-grow">
-                <button type="submit" class="bg-transparent border-0 outline-none cursor-pointer">
-                    <i class="fa-solid fa-arrow-right text-[#B197FC] text-xl"></i>
-                </button>
-            </form>
-            <div class="flex space-x-4">
-                <i class="fa-brands fa-facebook w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
-                <i class="fa-brands fa-x-twitter w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
-                <i class="fa-brands fa-whatsapp w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
-                <i class="fa-brands fa-instagram w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
-            </div>
+      <!-- Newsletter -->
+      <div class="w-full md:w-1/4 px-4 mb-10">
+        <h3 class="text-lg font-semibold relative mb-10 py-4">Newsletter
+          <div class="absolute bottom-0 left-0 w-24 h-1 bg-[#767676] rounded-full">
+            <span class="block w-4 h-full bg-white rounded-full animate-moving"></span>
+          </div>
+        </h3>
+        <form class="flex items-center mb-12 border-b border-gray-300 pb-3">
+          <i class="fa-solid fa-envelope text-gray-400 mr-3"></i>
+          <input type="email" placeholder="Enter your email id" required
+            class="bg-transparent text-gray-400 border-0 outline-none flex-grow">
+          <button type="submit" class="bg-transparent border-0 outline-none cursor-pointer">
+            <i class="fa-solid fa-arrow-right text-[#B197FC] text-xl"></i>
+          </button>
+        </form>
+        <div class="flex space-x-4">
+          <i
+            class="fa-brands fa-facebook w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+          <i
+            class="fa-brands fa-x-twitter w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+          <i
+            class="fa-brands fa-whatsapp w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
+          <i
+            class="fa-brands fa-instagram w-10 h-10 flex items-center justify-center text-lg text-black bg-white rounded-full cursor-pointer"></i>
         </div>
+      </div>
     </div>
 
     <hr class="my-6 mx-auto border-gray-300 w-11/12">
@@ -255,50 +308,56 @@
   </footer>
 
   <style>
-      @keyframes moving {
-          0% { left: -20px; }
-          100% { left: 100px; }
+    @keyframes moving {
+      0% {
+        left: -20px;
       }
 
-      .animate-moving {
-          width: 15px;
-          height: 100%;
-          background: #fff;
-          border-radius: 3px;
-          position: absolute;
-          top: 0;
-          left: 10px;
-          animation: moving 2s linear infinite;
+      100% {
+        left: 100px;
       }
+    }
+
+    .animate-moving {
+      width: 15px;
+      height: 100%;
+      background: #fff;
+      border-radius: 3px;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      animation: moving 2s linear infinite;
+    }
   </style>
 
 
   <script>
-        // JavaScript to toggle answer visibility
-        function toggleAnswer(questionNumber) {
-          const answer = document.getElementById(`answer-${questionNumber}`);
-          answer.classList.toggle('hidden');
-        }
+    // JavaScript to toggle answer visibility
+    function toggleAnswer(questionNumber) {
+      const answer = document.getElementById(`answer-${questionNumber}`);
+      answer.classList.toggle('hidden');
+    }
   </script>
 
 
   <script>
     const navLinks = document.querySelector('.nav-links');
-    
+
     function onToggleMenu(icon) {
-        // Toggle between menu and close icon
-        icon.name = icon.name === 'menu' ? 'close' : 'menu';
-        
-        // Toggle nav-links visibility
-        navLinks.classList.toggle('hidden');
-        
-        // If visible, set top position to adjust it correctly
-        if (!navLinks.classList.contains('hidden')) {
-            navLinks.classList.add('top-[9%]');
-        } else {
-            navLinks.classList.remove('top-[9%]');
-        }
+      // Toggle between menu and close icon
+      icon.name = icon.name === 'menu' ? 'close' : 'menu';
+
+      // Toggle nav-links visibility
+      navLinks.classList.toggle('hidden');
+
+      // If visible, set top position to adjust it correctly
+      if (!navLinks.classList.contains('hidden')) {
+        navLinks.classList.add('top-[9%]');
+      } else {
+        navLinks.classList.remove('top-[9%]');
+      }
     }
   </script>
-  </body>
-  </html>
+</body>
+
+</html>
